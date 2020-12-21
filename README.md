@@ -14,6 +14,10 @@ Utility abstraction that allows for non-realtime rendering of jitter visuals. Th
 
 # Objects
 
+- jit.underworld - *the non-realtime rendering for jit.world*
+- jit.hades~ - *capture signals per render frame*
+- jit.styx~ - *record signals on capture start to soundfile*
+
 ## jit.underworld
 
 The main object that works together with the `jit.world` object to create a non-realtime rendering option.
