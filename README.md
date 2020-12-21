@@ -17,9 +17,9 @@ Utility abstraction that allows for non-realtime rendering of jitter visuals. Th
 ## jit.underworld
 
 The main object that works together with the `jit.world` object to create a non-realtime rendering option.
-### arguments:
-- jit.world context name
-- jit.underworld context name (use this for all your jitter objects in the patch)
+### arguments
+- context name : the jit.world context name
+- name : name your jit.underworld context and use this for all your jitter objects in the patch.
 
 ### attributes
 
@@ -35,6 +35,19 @@ The main object that works together with the `jit.world` object to create a non-
 - `render` - offline render the captured data/signal/visual to disk
 - `goto` - view a specific frame
 - `rewind` - rewind framecount to 0 (stop/realtime also rewind)
+
+## jit.hades~
+
+jit.hades~ will gather the signal data that comes in and store it in a dictionary per frame for you to take with you to the jit.underworld and allow for non-realtime rendering later on.
+
+### arguments
+
+- context name : use the name of your jit.underworld context
+- parameter name : set a custom parameter name for referring when capturing. Optional, if none it will use a random number.
+
+### messages
+
+- `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
 
 # Install
 
