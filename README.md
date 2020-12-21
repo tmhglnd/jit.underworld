@@ -8,7 +8,7 @@ Utility abstraction that allows for non-realtime rendering of jitter visuals. Th
 
 - `realtime` : First you set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. 
 
-- `capture` : Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). 
+- `capture` : Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). Use the jit.acheron~ to record your sound along with the capturing in real time.
 
 - `render` : The final stage is the (render). Starting the render will reset the framecount to 0, start rendering the visuals on the set resolution (dim), and record to [jit.record] with the settings (fps), (codec) and (engine). For every frame it will gather the capture data and apply to the visuals.
 
@@ -16,24 +16,23 @@ Utility abstraction that allows for non-realtime rendering of jitter visuals. Th
 
 - jit.underworld - *the non-realtime rendering for jit.world*
 - jit.hades~ - *capture signals per render frame*
-- jit.styx~ - *record signals on capture start to soundfile*
+- jit.acheron~ - *record audio on capture start to soundfile*
 
 ## jit.underworld
 
 The main object that works together with the `jit.world` object to create a non-realtime rendering option.
-### arguments
+
+**arguments**
 - context name : the jit.world context name
 - name : name your jit.underworld context and use this for all your jitter objects in the patch.
 
-### attributes
-
+**attributes**
 - `@fps` - the frames per second for data/signal capture and offline rendering
 - `@dim` - the resolution x/y
 - `@codec` - recording code (h264, prores, huffyuv, gif, jpeg)
 - `@engine` - recording engine (viddll, hap, avf, qt)
 
-### messages
-
+**messages**
 - `realtime` - use jitter in realtime, as usual
 - `capture` - start capturing the data/signal streams to dictionary per frame
 - `render` - offline render the captured data/signal/visual to disk
@@ -44,17 +43,24 @@ The main object that works together with the `jit.world` object to create a non-
 
 jit.hades~ will gather the signal data that comes in and store it in a dictionary per frame for you to take with you to the jit.underworld and allow for non-realtime rendering later on.
 
-### arguments
-
+**arguments**
 - context name : use the name of your jit.underworld context
 - parameter name : set a custom parameter name for referring when capturing. Optional, if none it will use a random number.
 
-### messages
-
+**messages**
 - `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
 
-# Install
+## jit.acheron~
 
+**arguments**
+- context name : use the name of your jit.underworld context
+- channel count: how many channels should be recorded
+
+**messages**
+- `multichannelsignal` - input a mc-signal to record
+- `capture` - enable/disable the recording when you run the capture message on jit.underworld.
+
+# Install
 
 Download zip
 ```
