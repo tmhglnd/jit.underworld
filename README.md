@@ -52,6 +52,8 @@ jit.hades~ will gather the signal data that comes in and store it in a dictionar
 
 ## jit.acheron~
 
+jit.acheron~ is a multichannel recording abstraction that starts recording the received sound to a file on your disk in real time. It starts its recording at the moment you start to `capture` signals and parameters for the frame-timeline to allow for tight synchronisation after the rendering process is completed and you manually combine the video with the soundrecording.
+
 **arguments**
 - context name : use the name of your jit.underworld context
 - channel count: how many channels should be recorded
