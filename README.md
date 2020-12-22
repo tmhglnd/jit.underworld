@@ -1,10 +1,10 @@
 # jit.underworld
 
-A small package of abstractions that allow for non-realtime rendering of your generative jitter visuals in high-resolution with synchronised sound and parameter capture.
+Gateway to non-realtime HiRes rendering with jit.world in Cycling74's Max
 
 # About
 
-Utility abstraction that allows for non-realtime rendering of jitter visuals. The rendering process has three steps. 
+Gateway to non-realtime HiRes rendering of jitter visuals. The rendering process has three steps. 
 
 - `realtime` : First you set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. 
 
@@ -53,7 +53,7 @@ jit.hades~ will gather the signal data that comes in and store it in a dictionar
 
 ## jit.persephone
 
-The compagnion of jit.hades~. Captures all "normal" data per rendering frame. This can be ints, floats, lists or symbols. All will be stored in the dictionary for non-realtime rendering.
+The spouse of jit.hades~. Captures all "regular" data per rendering frame. This can be `int`'s, `float`'s, `list`'s or `symbol`'s. All will be stored in the dictionary for non-realtime rendering.
 
 **arguments**
 - context name : use the name of your jit.underworld context

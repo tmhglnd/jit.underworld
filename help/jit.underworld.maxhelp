@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 93.0, 100.0, 827.0, 701.0 ],
+		"rect" : [ 92.0, 121.0, 827.0, 701.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -101,8 +101,8 @@
 									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "int", "" ],
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "bang", "" ],
 									"patching_rect" : [ 540.0, 98.0, 180.0, 62.0 ],
 									"text" : "jit.underworld ctx-help unw-help2 @fps 30 @codec h264 @engine hap @dim 480 270 @render_dim 1920 1080"
 								}
@@ -757,7 +757,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 93.0, 126.0, 827.0, 675.0 ],
+						"rect" : [ 92.0, 147.0, 827.0, 675.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -787,12 +787,122 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 660.0, 510.0, 53.0, 22.0 ],
+									"text" : "scale $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"floatoutput" : 1,
+									"id" : "obj-31",
+									"maxclass" : "slider",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 660.0, 242.0, 20.0, 140.0 ],
+									"size" : 1.0
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 145.666666666666686, 435.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-28",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 95.333333333333343, 435.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-184",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 343.0, 480.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-182",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 304.0, 480.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 235.5, 480.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "newobj",
+									"numinlets" : 5,
+									"numoutlets" : 5,
+									"outlettype" : [ "", "", "", "", "" ],
+									"patching_rect" : [ 196.0, 435.0, 177.0, 22.0 ],
+									"text" : "route time frame capture render"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 134.0, 480.0, 81.0, 22.0 ],
+									"text" : "0 0 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 367.0, 510.0, 82.0, 22.0 ],
+									"patching_rect" : [ 395.0, 510.0, 82.0, 22.0 ],
 									"text" : "getattr enable"
 								}
 
@@ -803,7 +913,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 367.0, 557.0, 45.0, 45.0 ]
+									"patching_rect" : [ 395.0, 555.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -820,7 +930,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 317.0, 315.0, 20.0, 20.0 ],
+									"patching_rect" : [ 301.0, 345.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "7",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -900,7 +1010,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 317.0, 390.0, 20.0, 20.0 ],
+									"patching_rect" : [ 236.75, 315.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -953,7 +1063,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 382.0, 331.0, 113.0, 20.0 ],
+									"patching_rect" : [ 360.0, 360.0, 113.0, 20.0 ],
 									"text" : "clear capture data"
 								}
 
@@ -964,7 +1074,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 382.0, 360.0, 53.0, 20.0 ],
+									"patching_rect" : [ 360.0, 391.0, 53.0, 20.0 ],
 									"text" : "goto 0"
 								}
 
@@ -975,7 +1085,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 382.0, 405.0, 41.0, 20.0 ],
+									"patching_rect" : [ 301.75, 330.0, 41.0, 20.0 ],
 									"text" : "frame"
 								}
 
@@ -988,7 +1098,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 330.0, 405.0, 50.0, 22.0 ]
+									"patching_rect" : [ 249.75, 330.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -999,7 +1109,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 435.0, 49.0, 22.0 ],
+									"patching_rect" : [ 249.75, 360.0, 49.0, 22.0 ],
 									"text" : "goto $1"
 								}
 
@@ -1011,7 +1121,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 330.0, 35.0, 22.0 ],
+									"patching_rect" : [ 314.0, 360.0, 35.0, 22.0 ],
 									"text" : "clear"
 								}
 
@@ -1023,7 +1133,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 360.0, 44.0, 22.0 ],
+									"patching_rect" : [ 314.0, 390.0, 44.0, 22.0 ],
 									"text" : "rewind"
 								}
 
@@ -1050,7 +1160,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 705.0, 480.0, 50.0, 22.0 ]
+									"patching_rect" : [ 585.0, 481.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1063,7 +1173,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 705.0, 435.0, 50.0, 22.0 ]
+									"patching_rect" : [ 699.5, 465.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1071,11 +1181,11 @@
 								"box" : 								{
 									"id" : "obj-27",
 									"maxclass" : "newobj",
-									"numinlets" : 3,
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 480.0, 169.0, 22.0 ],
-									"text" : "pack f f f"
+									"patching_rect" : [ 510.0, 480.0, 47.0, 22.0 ],
+									"text" : "pack f f"
 								}
 
 							}
@@ -1086,8 +1196,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 660.0, 405.0, 105.0, 22.0 ],
-									"text" : "jit.hades~ ctx-unw"
+									"patching_rect" : [ 660.0, 405.0, 129.0, 22.0 ],
+									"text" : "jit.persephone ctx-unw"
 								}
 
 							}
@@ -1100,18 +1210,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 585.0, 435.0, 105.0, 22.0 ],
 									"text" : "jit.hades~ ctx-unw"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-23",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 660.0, 360.0, 47.0, 22.0 ],
-									"text" : "*~ 360."
 								}
 
 							}
@@ -1136,18 +1234,6 @@
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 510.0, 360.0, 47.0, 22.0 ],
 									"text" : "*~ 360."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 660.0, 330.0, 60.0, 22.0 ],
-									"text" : "rand~ 0.5"
 								}
 
 							}
@@ -1182,8 +1268,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 510.0, 107.0, 22.0 ],
-									"text" : "rotatexyz $1 $2 $3"
+									"patching_rect" : [ 510.0, 510.0, 101.0, 22.0 ],
+									"text" : "rotatexyz $1 $2 0"
 								}
 
 							}
@@ -1214,12 +1300,13 @@
 							}
 , 							{
 								"box" : 								{
+									"hidden" : 1,
 									"id" : "obj-11",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 234.5, 354.0, 80.5, 33.0 ],
+									"patching_rect" : [ 15.0, 505.0, 80.5, 33.0 ],
 									"text" : "messages to jit.underworld"
 								}
 
@@ -1248,42 +1335,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-49",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 234.5, 480.0, 50.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 196.0, 450.0, 96.0, 22.0 ],
-									"text" : "route time frame"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-48",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 120.0, 480.0, 95.0, 22.0 ],
-									"text" : "0 0 0"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
@@ -1298,12 +1349,13 @@
 							}
 , 							{
 								"box" : 								{
+									"hidden" : 1,
 									"id" : "obj-42",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 234.5, 329.0, 75.0, 22.0 ],
+									"patching_rect" : [ 15.0, 480.0, 75.0, 22.0 ],
 									"text" : "r underworld"
 								}
 
@@ -1360,8 +1412,8 @@
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "int", "" ],
+									"numoutlets" : 4,
+									"outlettype" : [ "int", "", "bang", "" ],
 									"patching_rect" : [ 45.0, 405.0, 170.0, 22.0 ],
 									"text" : "jit.underworld ctx-help ctx-unw"
 								}
@@ -1387,7 +1439,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 98.0, 561.0, 181.0 ],
-									"text" : "The jit.underworld allows for non-realtime rendering of jitter visuals. The rendering process has 3 steps.\n\n1. First you can set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. \n\n2. Include [jit.hades~] in process that need to be captured for non-realtime rendering. Add [jit.acheron~] for audio recording of your signal to disk. Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). \n\n3. The final stage is the (render). Starting the render will reset the framecount to 0, start rendering the visuals on the set resolution (dim), and record to [jit.record] with the settings (fps), (codec) and (engine). For every frame it will gather the capture data and apply to the visuals.",
+									"text" : "The jit.underworld allows for non-realtime rendering of jitter visuals. The rendering process has 3 steps.\n\n1. First you can set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. \n\n2. Include [jit.hades~] or [jit.persephone] in process that need to be captured for non-realtime rendering. Add [jit.acheron~] for audio recording of your signal to disk. Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). \n\n3. The final stage is the (render). Starting the render will reset the framecount to 0, start rendering the visuals on the set resolution (dim), and record to [jit.record] with the settings (fps), (codec) and (engine). For every frame it will gather the capture data and apply to the visuals.",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
 
@@ -1454,13 +1506,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
-									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-19", 0 ]
 								}
@@ -1475,8 +1520,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-24", 0 ],
+									"destination" : [ "obj-28", 0 ],
 									"source" : [ "obj-2", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-2", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-2", 3 ]
 								}
 
 							}
@@ -1484,27 +1543,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
 									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-26", 0 ],
-									"source" : [ "obj-23", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-48", 1 ],
-									"source" : [ "obj-24", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-49", 0 ],
-									"source" : [ "obj-24", 1 ]
 								}
 
 							}
@@ -1526,7 +1564,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-27", 2 ],
+									"destination" : [ "obj-33", 0 ],
 									"order" : 1,
 									"source" : [ "obj-26", 0 ]
 								}
@@ -1551,6 +1589,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-30", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-31", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-33", 0 ]
 								}
 
 							}
@@ -1599,6 +1651,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
+									"hidden" : 1,
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -1614,6 +1667,34 @@
 								"patchline" : 								{
 									"destination" : [ "obj-44", 0 ],
 									"source" : [ "obj-46", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 1 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-182", 0 ],
+									"source" : [ "obj-7", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-184", 0 ],
+									"source" : [ "obj-7", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-7", 1 ]
 								}
 
 							}
@@ -1705,6 +1786,13 @@
 			}
 , 			{
 				"name" : "jit.hades~.maxpat",
+				"bootpath" : "~/Documents/Max 7/Library/abstractions/jit.underworld/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "jit.persephone.maxpat",
 				"bootpath" : "~/Documents/Max 7/Library/abstractions/jit.underworld/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
