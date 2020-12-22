@@ -39,13 +39,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-87",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 1065.0, 484.0, 131.0, 22.0 ],
+					"text" : "route endtime starttime"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-41",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 605.5, 734.0, 55.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "render bang offline"
 				}
 
@@ -80,7 +91,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 373.75, 540.0, 80.0, 22.0 ],
+					"patching_rect" : [ 373.75, 540.0, 81.0, 22.0 ],
 					"text" : "s #0_outlet"
 				}
 
@@ -103,7 +114,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 686.0, 680.0, 80.0, 22.0 ],
+					"patching_rect" : [ 686.0, 680.0, 81.0, 22.0 ],
 					"text" : "s #0_outlet"
 				}
 
@@ -1266,7 +1277,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 745.0, 840.0, 129.0, 22.0 ],
+					"patching_rect" : [ 760.0, 840.0, 129.0, 22.0 ],
 					"text" : "s #2_frameCount"
 				}
 
@@ -1715,6 +1726,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-181", 0 ],
 					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-87", 0 ],
+					"source" : [ "obj-30", 4 ]
 				}
 
 			}
