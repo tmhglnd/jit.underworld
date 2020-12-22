@@ -1,6 +1,6 @@
 # jit.underworld
 
-A small package of abstractions that allow for non-realtime rendering of jitter visuals with sound
+A small package of abstractions that allow for non-realtime rendering of your generative jitter visuals in high-resolution with synchronised sound and parameter capture.
 
 # About
 
