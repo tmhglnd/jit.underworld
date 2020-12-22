@@ -550,8 +550,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 702.0, 540.0, 65.0, 22.0 ],
-					"text" : "capture $1"
+					"patching_rect" : [ 702.0, 540.0, 60.0, 22.0 ],
+					"text" : "render $1"
 				}
 
 			}
