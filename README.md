@@ -15,7 +15,8 @@ Utility abstraction that allows for non-realtime rendering of jitter visuals. Th
 # Objects
 
 - jit.underworld - *the non-realtime rendering for jit.world*
-- jit.hades~ - *capture signals per render frame*
+- jit.hades~ - *capture signals per frame*
+- jit.persephone - *capture data (int/float/list/symbols) per frame*
 - jit.acheron~ - *record audio on capture start to soundfile*
 
 ## jit.underworld
@@ -45,10 +46,22 @@ jit.hades~ will gather the signal data that comes in and store it in a dictionar
 
 **arguments**
 - context name : use the name of your jit.underworld context
-- parameter name : set a custom parameter name for referring when capturing. Optional, if none it will use a random number.
+- parameter name : set a custom parameter name for referring when capturing (optional, if none it will use a random number)
 
 **messages**
 - `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
+
+## jit.persephone
+
+The compagnion of jit.hades~. Captures all "normal" data per rendering frame. This can be ints, floats, lists or symbols. All will be stored in the dictionary for non-realtime rendering.
+
+**arguments**
+- context name : use the name of your jit.underworld context
+- parameter name : set a custom parameter name for referring when capturing (optional, if none it will use a random number)
+
+**messages**
+- `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
+- `zlmaxsize` - set the max listlength (default is 256)
 
 ## jit.acheron~
 
