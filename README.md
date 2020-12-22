@@ -29,7 +29,8 @@ The main object that works together with the `jit.world` object to create a non-
 
 **attributes**
 - `@fps` - the frames per second for data/signal capture and offline rendering
-- `@dim` - the resolution x/y
+- `@dim` - the rendering resolution x/y
+- `@render_dim` - the preview resolution in the jit.world
 - `@codec` - recording code (h264, prores, huffyuv, gif, jpeg)
 - `@engine` - recording engine (viddll, hap, avf, qt)
 
@@ -39,6 +40,8 @@ The main object that works together with the `jit.world` object to create a non-
 - `render` - offline render the captured data/signal/visual to disk
 - `goto` - view a specific frame
 - `rewind` - rewind framecount to 0 (stop/realtime also rewind)
+- `endtime` - automatically stop the rendering and capturing after this time (mm ss ms)
+- `messages` - set attributes via messages
 
 ## jit.hades~
 
@@ -48,9 +51,12 @@ jit.hades~ will gather the signal data that comes in and store it in a dictionar
 - context name : use the name of your jit.underworld context
 - parameter name : set a custom parameter name for referring when capturing (optional, if none it will use a random number)
 
-**messages**
-- `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
+**attributes**
+- `@capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
 
+**messages**
+- `signal` - capture incoming signal or throughput in realtime mode. Signals will be converted to `float` via snapshot per render bang.
+- `messages` - set attributes via messages
 ## jit.persephone
 
 The spouse of jit.hades~. Captures all "regular" data per rendering frame. This can be `int`'s, `float`'s, `list`'s or `symbol`'s. All will be stored in the dictionary for non-realtime rendering.
@@ -59,10 +65,14 @@ The spouse of jit.hades~. Captures all "regular" data per rendering frame. This 
 - context name : use the name of your jit.underworld context
 - parameter name : set a custom parameter name for referring when capturing (optional, if none it will use a random number)
 
-**messages**
-- `capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
-- `zlmaxsize` - set the max listlength (default is 256)
+**attributes**
+- `@capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
+- `@change` - set to 1 if you only want values to output on changes
+- `@zlmaxsize` - set the max listlength (default is 256)
 
+**messages**
+- `int` `float` `list` `symbol` - capture incoming data or throughput in realtime mode
+- `messages` - set attributes via messages
 ## jit.acheron~
 
 jit.acheron~ is a multichannel recording abstraction that starts recording the received sound to a file on your disk in real time. It starts its recording at the moment you start to `capture` signals and parameters for the frame-timeline to allow for tight synchronisation after the rendering process is completed and you manually combine the video with the soundrecording.
@@ -71,9 +81,12 @@ jit.acheron~ is a multichannel recording abstraction that starts recording the r
 - context name : use the name of your jit.underworld context
 - channel count: how many channels should be recorded
 
+**attributes**
+- `@capture` - enable/disable the recording when you run the capture message on jit.underworld.
+
 **messages**
 - `multichannelsignal` - input a mc-signal to record
-- `capture` - enable/disable the recording when you run the capture message on jit.underworld.
+- `messages` - set attributes via messages
 
 # Install
 
