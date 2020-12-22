@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 63.0, 391.0, 54.0, 22.0 ],
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-83",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -56,7 +68,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 234.5, 749.0, 74.0, 33.0 ],
+					"patching_rect" : [ 234.5, 749.0, 76.0, 33.0 ],
 					"text" : "read texture to matrix"
 				}
 
@@ -80,7 +92,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 544.0, 785.0, 66.0, 33.0 ],
+					"patching_rect" : [ 544.0, 785.0, 67.0, 33.0 ],
 					"text" : "connect to jit.world"
 				}
 
@@ -93,7 +105,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 750.0, 919.0, 129.0, 60.0 ],
-					"presentation_linecount" : 5,
 					"text" : "outlet for:\nframecount\ntimecode (mm ss ms)\ndim"
 				}
 
@@ -152,8 +163,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 314.0, 693.0, 87.0, 33.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 314.0, 693.0, 91.0, 33.0 ],
 					"text" : "renderbang for snapshots"
 				}
 
@@ -166,7 +176,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 450.0, 919.0, 87.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "if abort savedialog movie file, stop render"
 				}
 
@@ -179,7 +188,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 369.5, 360.0, 87.0, 60.0 ],
-					"presentation_linecount" : 4,
 					"text" : "if rendering, disable after 2nd render message"
 				}
 
@@ -310,7 +318,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 203.0, 330.0, 88.0, 22.0 ],
+					"patching_rect" : [ 203.0, 330.0, 99.0, 22.0 ],
 					"text" : "r #2_render"
 				}
 
@@ -418,7 +426,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 63.0, 330.0, 55.0, 22.0 ],
+					"patching_rect" : [ 63.0, 420.0, 55.0, 22.0 ],
 					"text" : "name $2"
 				}
 
@@ -430,8 +438,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1125.0, 45.0, 435.0, 234.0 ],
-					"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@prev_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)"
+					"patching_rect" : [ 1034.0, 80.0, 435.0, 234.0 ],
+					"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@render_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)"
 				}
 
 			}
@@ -596,8 +604,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 150.0, 175.0, 40.0, 22.0 ],
-									"text" : "* 100."
+									"patching_rect" : [ 150.0, 175.0, 47.0, 22.0 ],
+									"text" : "* 1000."
 								}
 
 							}
@@ -799,7 +807,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 45.0, 280.0, 73.0, 22.0 ],
+					"patching_rect" : [ 45.0, 330.0, 73.0, 22.0 ],
 					"text" : "r #0_args"
 				}
 
@@ -907,8 +915,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 809.0, 253.0, 242.0, 49.0 ],
-					"text" : "patcherargs @codec prores @engine viddll @dim 1280 720 @render_dim 1920 1080 @fps 60 @output_framecount 0"
+					"patching_rect" : [ 809.0, 253.0, 190.0, 49.0 ],
+					"text" : "patcherargs @codec prores @engine viddll @dim 1280 720 @render_dim 1920 1080 @fps 60"
 				}
 
 			}
@@ -1152,7 +1160,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 570.0, 540.0, 90.0, 22.0 ],
+					"patching_rect" : [ 570.0, 540.0, 101.0, 22.0 ],
 					"text" : "s #2_render"
 				}
 
@@ -1163,7 +1171,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 745.0, 840.0, 118.0, 22.0 ],
+					"patching_rect" : [ 745.0, 840.0, 129.0, 22.0 ],
 					"text" : "s #2_frameCount"
 				}
 
@@ -1174,7 +1182,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 680.5, 650.0, 95.0, 22.0 ],
+					"patching_rect" : [ 680.5, 650.0, 106.0, 22.0 ],
 					"text" : "s #2_capture"
 				}
 
@@ -1265,25 +1273,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 45.0, 919.0, 246.0, 22.0 ],
-					"text" : "jit.gl.videoplane #1 @transform_reset 2"
+					"patching_rect" : [ 45.0, 919.0, 245.0, 35.0 ],
+					"text" : "jit.gl.videoplane #1 @transform_reset 2 @layer 9999 @depth_enable 0"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-4",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_gl_texture", "", "" ],
-					"patching_rect" : [ 45.0, 510.0, 263.5, 35.0 ],
-					"text" : "jit.gl.node #1 @capture 1 @dim 1920 1080 @erase_color 0 0 0 0 @fsaa 1 @adapt 0"
+					"patching_rect" : [ 45.0, 510.0, 233.0, 49.0 ],
+					"text" : "jit.gl.node #1 @name #2 @capture 1 @dim 1920 1080 @erase_color 0 0 0 0 @fsaa 1 @adapt 0"
 				}
 
 			}
@@ -1493,16 +1502,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-14", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-23", 0 ],
+					"order" : 1,
 					"source" : [ "obj-22", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-50", 0 ],
+					"order" : 0,
 					"source" : [ "obj-22", 0 ]
 				}
 
@@ -1778,6 +1787,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-45", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-50", 0 ]
 				}
 
 			}
