@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 92.0, 121.0, 827.0, 701.0 ],
+		"rect" : [ 92.0, 100.0, 973.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 827.0, 675.0 ],
+						"rect" : [ 92.0, 126.0, 973.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -102,7 +102,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
-									"outlettype" : [ "int", "", "bang", "" ],
+									"outlettype" : [ "int", "bang", "bang", "" ],
 									"patching_rect" : [ 540.0, 98.0, 180.0, 62.0 ],
 									"text" : "jit.underworld ctx-help unw-help2 @fps 30 @codec h264 @engine hap @dim 480 270 @render_dim 1920 1080"
 								}
@@ -530,12 +530,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-88",
-									"linecount" : 17,
+									"linecount" : 18,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 98.0, 438.0, 234.0 ],
-									"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@render_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)",
+									"patching_rect" : [ 45.0, 98.0, 438.0, 248.0 ],
+									"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@render_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)\nendtime - specify the endtime for capture and render as list (min sec ms)",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
 
@@ -757,7 +757,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 92.0, 147.0, 827.0, 675.0 ],
+						"rect" : [ 0.0, 26.0, 973.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -787,12 +787,137 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-58",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 420.0, 394.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 395.0, 416.0, 148.0, 60.0 ],
+									"text" : "end time for capturing and rendering (if all 0 you need to send message realtime to stop manually)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-130",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 443.0, 308.5, 50.0, 20.0 ],
+									"text" : "ms"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-111",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 383.0, 308.5, 50.0, 20.0 ],
+									"text" : "sec"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-106",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 323.0, 308.5, 50.0, 20.0 ],
+									"text" : "min"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-104",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 323.0, 360.5, 139.0, 22.0 ],
+									"text" : "pak i i i"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-101",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 443.0, 330.5, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-99",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 383.0, 330.5, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-97",
+									"maxclass" : "number",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 323.0, 330.0, 50.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-94",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 323.0, 390.0, 101.0, 22.0 ],
+									"text" : "endtime $1 $2 $3"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-33",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 660.0, 510.0, 53.0, 22.0 ],
+									"patching_rect" : [ 780.0, 510.0, 53.0, 22.0 ],
 									"text" : "scale $1"
 								}
 
@@ -806,7 +931,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 660.0, 242.0, 20.0, 140.0 ],
+									"patching_rect" : [ 780.0, 242.0, 20.0, 140.0 ],
 									"size" : 1.0
 								}
 
@@ -930,7 +1055,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 301.0, 345.0, 20.0, 20.0 ],
+									"patching_rect" : [ 498.0, 315.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "7",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -970,7 +1095,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 563.0, 450.0, 20.0, 20.0 ],
+									"patching_rect" : [ 683.0, 450.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "6",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1030,7 +1155,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 210.0, 495.0, 20.0, 20.0 ],
+									"patching_rect" : [ 105.0, 315.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1039,31 +1164,12 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-58",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 109.0, 315.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "2",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-53",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 360.0, 360.0, 113.0, 20.0 ],
+									"patching_rect" : [ 511.0, 354.5, 74.0, 47.0 ],
 									"text" : "clear capture data"
 								}
 
@@ -1074,7 +1180,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 360.0, 391.0, 53.0, 20.0 ],
+									"patching_rect" : [ 555.0, 308.5, 53.0, 20.0 ],
 									"text" : "goto 0"
 								}
 
@@ -1085,7 +1191,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 301.75, 330.0, 41.0, 20.0 ],
+									"patching_rect" : [ 254.25, 307.5, 41.0, 20.0 ],
 									"text" : "frame"
 								}
 
@@ -1121,7 +1227,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 314.0, 360.0, 35.0, 22.0 ],
+									"patching_rect" : [ 511.0, 330.5, 35.0, 22.0 ],
 									"text" : "clear"
 								}
 
@@ -1133,7 +1239,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 314.0, 390.0, 44.0, 22.0 ],
+									"patching_rect" : [ 555.0, 330.5, 44.0, 22.0 ],
 									"text" : "rewind"
 								}
 
@@ -1147,7 +1253,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 525.0, 435.0, 50.0, 22.0 ]
+									"patching_rect" : [ 645.0, 435.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1160,7 +1266,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 585.0, 481.0, 50.0, 22.0 ]
+									"patching_rect" : [ 705.0, 481.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1173,7 +1279,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 699.5, 465.0, 50.0, 22.0 ]
+									"patching_rect" : [ 819.5, 465.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -1184,7 +1290,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 480.0, 47.0, 22.0 ],
+									"patching_rect" : [ 630.0, 480.0, 47.0, 22.0 ],
 									"text" : "pack f f"
 								}
 
@@ -1196,7 +1302,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 660.0, 405.0, 129.0, 22.0 ],
+									"patching_rect" : [ 780.0, 405.0, 129.0, 22.0 ],
 									"text" : "jit.persephone ctx-unw"
 								}
 
@@ -1208,7 +1314,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 585.0, 435.0, 105.0, 22.0 ],
+									"patching_rect" : [ 705.0, 435.0, 105.0, 22.0 ],
 									"text" : "jit.hades~ ctx-unw"
 								}
 
@@ -1220,7 +1326,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 585.0, 360.0, 47.0, 22.0 ],
+									"patching_rect" : [ 705.0, 360.0, 47.0, 22.0 ],
 									"text" : "*~ 360."
 								}
 
@@ -1232,7 +1338,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 510.0, 360.0, 47.0, 22.0 ],
+									"patching_rect" : [ 630.0, 360.0, 47.0, 22.0 ],
 									"text" : "*~ 360."
 								}
 
@@ -1244,7 +1350,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 585.0, 330.0, 60.0, 22.0 ],
+									"patching_rect" : [ 705.0, 330.0, 60.0, 22.0 ],
 									"text" : "rand~ 0.5"
 								}
 
@@ -1256,7 +1362,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 510.0, 330.0, 60.0, 22.0 ],
+									"patching_rect" : [ 630.0, 330.0, 60.0, 22.0 ],
 									"text" : "rand~ 0.5"
 								}
 
@@ -1268,7 +1374,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 510.0, 101.0, 22.0 ],
+									"patching_rect" : [ 630.0, 510.0, 101.0, 22.0 ],
 									"text" : "rotatexyz $1 $2 0"
 								}
 
@@ -1280,7 +1386,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 405.0, 105.0, 22.0 ],
+									"patching_rect" : [ 630.0, 405.0, 105.0, 22.0 ],
 									"text" : "jit.hades~ ctx-unw"
 								}
 
@@ -1293,7 +1399,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 510.0, 555.0, 270.0, 49.0 ],
+									"patching_rect" : [ 630.0, 555.0, 270.0, 49.0 ],
 									"text" : "jit.gl.gridshape ctx-unw @shape torus @poly_mode 1 0 @line_width 2 @lighting_enable 1 @color 1 1 1 1 @scale 0.4"
 								}
 
@@ -1413,7 +1519,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
-									"outlettype" : [ "int", "", "bang", "" ],
+									"outlettype" : [ "int", "bang", "bang", "" ],
 									"patching_rect" : [ 45.0, 405.0, 170.0, 22.0 ],
 									"text" : "jit.underworld ctx-help ctx-unw"
 								}
@@ -1464,6 +1570,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-104", 2 ],
+									"source" : [ "obj-101", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-94", 0 ],
+									"source" : [ "obj-104", 0 ]
 								}
 
 							}
@@ -1695,6 +1815,27 @@
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-7", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-94", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-104", 0 ],
+									"source" : [ "obj-97", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-104", 1 ],
+									"source" : [ "obj-99", 0 ]
 								}
 
 							}
