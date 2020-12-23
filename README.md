@@ -2,6 +2,8 @@
 
 Gateway to non-realtime HiRes rendering with jit.world in Cycling74's Max
 
+![package image](./media/image.png)
+
 # About
 
 Gateway to non-realtime HiRes rendering of jitter visuals. The rendering process has three steps. 
