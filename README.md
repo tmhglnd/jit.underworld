@@ -16,10 +16,10 @@ Gateway to non-realtime HiRes rendering of jitter visuals. The rendering process
 
 # Objects
 
-- jit.underworld - *the non-realtime rendering for jit.world*
-- jit.hades~ - *capture signals per frame*
-- jit.persephone - *capture data (int/float/list/symbols) per frame*
-- jit.acheron~ - *record audio on capture start to soundfile*
+- `jit.underworld` : *the non-realtime rendering for jit.world*
+- `jit.hades~` : *capture signals per frame*
+- `jit.persephone` : *capture data (int/float/list/symbols) per frame*
+- `jit.acheron~` : *record audio on capture start to soundfile*
 
 ## jit.underworld
 
