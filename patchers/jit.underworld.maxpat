@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,7 +37,31 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-89",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 126.5, 570.0, 81.0, 22.0 ],
+					"text" : "s #0_outlet"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-86",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "jit_matrix", "" ],
+					"patching_rect" : [ 79.5, 810.0, 53.0, 22.0 ],
+					"text" : "jit.matrix"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-85",
 					"maxclass" : "newobj",
@@ -190,8 +214,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -224,6 +248,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -522,11 +547,11 @@
 				"box" : 				{
 					"id" : "obj-87",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1026.0, 630.0, 131.0, 22.0 ],
-					"text" : "route endtime starttime"
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 1026.0, 630.0, 191.0, 22.0 ],
+					"text" : "route endtime endframes starttime"
 				}
 
 			}
@@ -881,7 +906,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 126.5, 728.0, 61.0, 22.0 ],
+					"patching_rect" : [ 160.5, 724.0, 61.0, 22.0 ],
 					"text" : "enable $1"
 				}
 
@@ -1026,7 +1051,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1026.0, 80.0, 480.0, 248.0 ],
-					"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@render_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)\nendtime - automatically stop the rendering and capturing after this time (mm ss ms)"
+					"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the preview resolution x/y in the jit.world\n@render_dim - the resolution x/y (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)\nendtime - automatically stop the rendering and capturing after this time (mm ss ms)"
 				}
 
 			}
@@ -1138,8 +1163,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1172,6 +1197,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-47",
@@ -1436,18 +1462,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-29",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 79.5, 810.0, 150.0, 22.0 ],
-					"text" : "jit.gl.asyncread @enable 0"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -1514,7 +1528,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 126.5, 675.0, 48.0, 22.0 ],
+					"patching_rect" : [ 144.5, 675.0, 48.0, 22.0 ],
 					"text" : "change"
 				}
 
@@ -1866,7 +1880,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 45.0, 1080.0, 245.0, 35.0 ],
+					"patching_rect" : [ 45.0, 1080.0, 249.0, 35.0 ],
 					"text" : "jit.gl.videoplane #1 @transform_reset 2 @layer 9999 @depth_enable 0"
 				}
 
@@ -1932,7 +1946,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
+					"destination" : [ "obj-86", 0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -2255,13 +2269,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 1 ],
 					"order" : 0,
 					"source" : [ "obj-3", 0 ]
@@ -2503,13 +2510,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"source" : [ "obj-45", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-50", 0 ]
 				}
@@ -2646,6 +2646,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
+					"order" : 2,
+					"source" : [ "obj-69", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-89", 0 ],
 					"order" : 1,
 					"source" : [ "obj-69", 0 ]
 				}
@@ -2758,8 +2766,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-86", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-170", 0 ],
 					"source" : [ "obj-87", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-174", 1 ],
+					"source" : [ "obj-87", 1 ]
 				}
 
 			}
@@ -2809,7 +2831,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"order" : 0,
+					"order" : 1,
 					"source" : [ "obj-95", 0 ]
 				}
 
@@ -2817,7 +2839,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
-					"order" : 1,
+					"order" : 0,
 					"source" : [ "obj-95", 0 ]
 				}
 

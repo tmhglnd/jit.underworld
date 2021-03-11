@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 10,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 92.0, 100.0, 973.0, 702.0 ],
+		"rect" : [ 247.0, 107.0, 973.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,7 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-3",
@@ -49,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 92.0, 126.0, 973.0, 676.0 ],
+						"rect" : [ 247.0, 133.0, 973.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,6 +85,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-28",
@@ -142,8 +144,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 0,
-											"revision" : 8,
+											"minor" : 1,
+											"revision" : 10,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -176,6 +178,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-4",
@@ -535,7 +538,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 98.0, 438.0, 248.0 ],
-									"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the resolution x/y\n@render_dim - the preview resolution in the jit.world (will be dim if not provided) \n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)\nendtime - specify the endtime for capture and render as list (min sec ms)",
+									"text" : "arguments:\njit.world context name\njit.underworld context name (use this for all your jitter objects in the patch)\n\nattributes:\n@fps - the frames per second for data/signal capture and offline rendering\n@dim - the preview resolution x/y in the jit.world \n@render_dim - the recording resolution x/y (will be dim if not provided)\n@codec - recording code (h264, prores, huffyuv, gif, jpeg)\n@engine - recording engine (viddll, hap, avf, qt)\n\nmessages:\nrealtime - use jitter in realtime, as usual\ncapture - start capturing the data/signal streams to dictionary per frame\nrender - offline render the captured data/signal/visual to disk\ngoto - view a specific frame\nrewind - rewind framecount to 0 (stop/realtime also rewind)\nendtime - specify the endtime for capture and render as list (min sec ms)",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
 
@@ -750,8 +753,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 1,
+							"revision" : 10,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -785,6 +788,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
@@ -812,7 +816,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 395.0, 416.0, 148.0, 60.0 ],
+									"patching_rect" : [ 395.0, 416.0, 151.0, 60.0 ],
 									"text" : "end time for capturing and rendering (if all 0 you need to send message realtime to stop manually)"
 								}
 
@@ -1531,7 +1535,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "bang", "" ],
+									"outlettype" : [ "jit_matrix", "bang", "" ],
 									"patching_rect" : [ 45.0, 555.0, 304.0, 22.0 ],
 									"text" : "jit.world ctx-help @floating 1 @size 480 270 @enable 1"
 								}
@@ -1545,7 +1549,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 98.0, 561.0, 181.0 ],
-									"text" : "The jit.underworld allows for non-realtime rendering of jitter visuals. The rendering process has 3 steps.\n\n1. First you can set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. \n\n2. Include [jit.hades~] or [jit.persephone] in process that need to be captured for non-realtime rendering. Add [jit.acheron~] for audio recording of your signal to disk. Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). \n\n3. The final stage is the (render). Starting the render will reset the framecount to 0, start rendering the visuals on the set resolution (dim), and record to [jit.record] with the settings (fps), (codec) and (engine). For every frame it will gather the capture data and apply to the visuals.",
+									"text" : "The jit.underworld allows for non-realtime rendering of jitter visuals. The rendering process has 3 steps.\n\n1. First you can set the mode to (realtime), allowing normal jitter processes and rendering, use this to patch like usual and create your generative processes and controller mappings. \n\n2. Include [jit.hades~] or [jit.persephone] in process that need to be captured for non-realtime rendering. Add [jit.acheron~] for audio recording of your signal to disk. Then start (capture) to gather all controller, signal and data-streams on a per-frame basis (with framecount) into a dictionary. Switch to (realtime) to stop the capturing, or send a message (stop). \n\n3. The final stage is the (render). Starting the render will reset the framecount to 0, start rendering the visuals on the set resolution (render_dim), and record to [jit.record] with the settings (fps), (codec) and (engine). For every frame it will gather the capture data and apply to the visuals.",
 									"textcolor" : [ 0.32548999786377, 0.345097988843918, 0.372548997402191, 1.0 ]
 								}
 
