@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,7 +37,129 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-146",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 365.0, 506.0, 261.0, 47.0 ],
+					"text" : "make sure the window size is the same aspect ratio as the rendering dimensions (to make sure there is not stretchin gin the image)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-144",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 568.0, 292.5, 75.0, 22.0 ],
+					"text" : "dim 380 180"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-142",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 300.0, 506.0, 63.0, 22.0 ],
+					"text" : "size $1 $2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-140",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 622.0, 525.0, 58.0, 22.0 ],
+					"text" : "pak 480 f"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-139",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 622.0, 488.0, 40.0, 22.0 ],
+					"text" : "* 480."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-100",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 622.0, 458.0, 29.5, 22.0 ],
+					"text" : "!/ 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-98",
+					"linecount" : 2,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 669.5, 475.0, 50.0, 35.0 ],
+					"text" : "380 180"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-92",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 622.0, 428.0, 59.0, 22.0 ],
+					"text" : "route dim"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-82",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 568.0, 323.0, 129.0, 22.0 ],
+					"text" : "render_dim 4560 2160"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 399.0, 920.0, 484.0, 47.0 ],
+					"text" : "In order to combine .mov and .wav file via ffmpeg command line tool use: \n\n$ ffmpeg -i video.mp4 -i audio.wav -map 0:v -map 1:a -c:v copy -shortest output.mp4"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-138",
 					"maxclass" : "newobj",
@@ -48,8 +170,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -82,6 +204,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
@@ -230,7 +353,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 45.0, 900.0, 105.0, 22.0 ],
+					"patching_rect" : [ 73.0, 900.0, 105.0, 22.0 ],
 					"text" : "jit.gl.pix @t border"
 				}
 
@@ -434,8 +557,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -468,6 +591,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-5",
@@ -708,12 +832,16 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 781.25, 673.0, 15.0, 15.0 ],
 					"saved_attribute_attributes" : 					{
+						"activebgoncolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_type" : 2,
+							"parameter_enum" : [ "off", "on" ],
 							"parameter_longname" : "live.button[2]",
 							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.button",
-							"parameter_enum" : [ "off", "on" ]
+							"parameter_type" : 2
 						}
 
 					}
@@ -804,8 +932,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -838,6 +966,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-6",
@@ -1125,7 +1254,7 @@
 					"patching_rect" : [ 1312.0, 218.0, 56.0, 22.0 ],
 					"restore" : 					{
 						"live.button[2]" : [ 0.0 ],
-						"mc.live.gain~" : [ -11.849027136070788 ],
+						"mc.live.gain~" : [ -16.06103989067487 ],
 						"yShift" : [ 0.684684693813324, 0.639639616012573, 0.594594597816467, 0.531531512737274, 0.468468457460403, 0.621621608734131, 0.594594597816467, 0.549549520015717, 0.495495498180389, 0.459459453821182, 0.432432442903519, 0.675675690174103, 0.639639616012573, 0.61261260509491, 0.576576590538025, 0.540540516376495, 0.495495498180389, 0.450450450181961, 0.414414405822754, 0.603603601455688, 0.567567586898804, 0.531531512737274, 0.504504501819611, 0.450450450181961, 0.396396398544312, 0.369369357824326, 0.324324309825897, 0.585585594177246, 0.522522509098053, 0.486486494541168, 0.459459453821182, 0.432432442903519, 0.693693697452545, 0.639639616012573, 0.585585594177246, 0.540540516376495, 0.513513505458832, 0.432432442903519, 0.369369357824326, 0.648648619651794, 0.630630612373352, 0.61261260509491, 0.585585594177246, 0.549549520015717, 0.522522509098053, 0.423423409461975, 0.639639616012573, 0.585585594177246, 0.531531512737274, 0.468468457460403, 0.432432442903519, 0.396396398544312, 0.720720708370209, 0.666666686534882, 0.639639616012573, 0.558558583259583, 0.486486494541168, 0.459459453821182, 0.639639616012573, 0.603603601455688, 0.558558583259583, 0.522522509098053, 0.468468457460403, 0.378378391265869 ]
 					}
 ,
@@ -1203,8 +1332,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1237,6 +1366,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -1527,7 +1657,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 983.0, 353.0, 50.0, 22.0 ],
-					"text" : "sphere"
+					"text" : "torus"
 				}
 
 			}
@@ -1554,8 +1684,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1588,6 +1718,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-1",
@@ -1937,8 +2068,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 0,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1971,6 +2102,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-118",
@@ -2198,12 +2330,12 @@
 					"patching_rect" : [ 894.0, 673.0, 136.0, 47.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
 							"parameter_longname" : "mc.live.gain~",
 							"parameter_mmax" : 6.0,
-							"parameter_shortname" : "mc.live.gain~"
+							"parameter_mmin" : -70.0,
+							"parameter_shortname" : "mc.live.gain~",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
 						}
 
 					}
@@ -2238,11 +2370,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-93",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 615.0, 180.5, 123.5, 20.0 ],
-					"text" : "dictionary"
+					"patching_rect" : [ 613.0, 150.5, 123.5, 33.0 ],
+					"text" : "dictionary with performance capture"
 				}
 
 			}
@@ -2364,21 +2497,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 894.0, 521.0, 120.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"basictuning" : 440,
-						"followglobaltempo" : 0,
-						"formantcorrection" : 0,
-						"loopend" : [ 0.0, "ms" ],
-						"loopstart" : [ 0.0, "ms" ],
-						"mode" : "basic",
-						"originallength" : [ 0.0, "ticks" ],
-						"originaltempo" : 120.0,
-						"phase" : [ 0.0, "ticks" ],
-						"pitchcorrection" : 0,
-						"quality" : "basic",
-						"timestretch" : [ 0 ]
-					}
-,
 					"text" : "groove~ buf @loop 1"
 				}
 
@@ -2556,18 +2674,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-31",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 625.5, 428.0, 88.0, 22.0 ],
-					"text" : "dim 480 270"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
 					"numinlets" : 5,
@@ -2691,7 +2797,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 615.0, 280.5, 77.0, 22.0 ],
+					"patching_rect" : [ 613.0, 263.5, 77.0, 22.0 ],
 					"text" : "s underworld"
 				}
 
@@ -2703,7 +2809,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 247.5, 19.0, 22.0 ],
+					"patching_rect" : [ 613.0, 230.5, 19.0, 22.0 ],
 					"text" : "t l"
 				}
 
@@ -2715,7 +2821,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 706.0, 204.5, 35.0, 22.0 ],
+					"patching_rect" : [ 704.0, 187.5, 35.0, 22.0 ],
 					"text" : "clear"
 				}
 
@@ -2727,7 +2833,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 660.0, 204.5, 34.0, 22.0 ],
+					"patching_rect" : [ 658.0, 187.5, 34.0, 22.0 ],
 					"text" : "write"
 				}
 
@@ -2739,7 +2845,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 204.5, 35.0, 22.0 ],
+					"patching_rect" : [ 613.0, 187.5, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -2780,7 +2886,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 340.0, 428.0, 66.0, 22.0 ],
-					"text" : "0 30 0"
+					"text" : "0 10 0"
 				}
 
 			}
@@ -2949,7 +3055,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "bang", "" ],
+					"outlettype" : [ "jit_matrix", "bang", "" ],
 					"patching_rect" : [ 45.0, 473.0, 242.0, 22.0 ],
 					"text" : "jit.world help-ctx @floating 1 @size 480 270"
 				}
@@ -2979,6 +3085,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
 					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-139", 0 ],
+					"source" : [ "obj-100", 0 ]
 				}
 
 			}
@@ -3091,7 +3204,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-138", 0 ],
+					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-123", 0 ]
 				}
 
@@ -3140,8 +3253,29 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-138", 0 ]
+					"destination" : [ "obj-140", 1 ],
+					"source" : [ "obj-139", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-142", 0 ],
+					"source" : [ "obj-140", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-142", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-144", 0 ]
 				}
 
 			}
@@ -3391,16 +3525,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-31", 1 ],
-					"order" : 0,
+					"destination" : [ "obj-33", 0 ],
+					"order" : 1,
 					"source" : [ "obj-45", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-92", 0 ],
+					"order" : 0,
 					"source" : [ "obj-45", 0 ]
 				}
 
@@ -3666,6 +3800,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-82", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
 					"source" : [ "obj-84", 0 ]
 				}
@@ -3682,6 +3823,22 @@
 				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
 					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-100", 0 ],
+					"order" : 1,
+					"source" : [ "obj-92", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-98", 1 ],
+					"order" : 0,
+					"source" : [ "obj-92", 0 ]
 				}
 
 			}
@@ -3708,12 +3865,13 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-180" : [ "live.button[2]", "live.button", 0 ],
 			"obj-115" : [ "mc.live.gain~", "mc.live.gain~", 0 ],
+			"obj-180" : [ "live.button[2]", "live.button", 0 ],
 			"parameterbanks" : 			{
 
 			}
-
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{

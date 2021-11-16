@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1344.0, 783.0 ],
+		"rect" : [ 754.0, 78.0, 652.0, 788.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-15",
@@ -163,7 +164,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "1354_param" ],
+					"outlettype" : [ "1369_param" ],
 					"patching_rect" : [ 584.5, 349.0, 83.0, 22.0 ],
 					"text" : "t #0_param"
 				}
@@ -480,7 +481,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(int, float, list, symbol) capture values per render frame",
 					"id" : "obj-56",
 					"index" : 1,
 					"maxclass" : "inlet",
@@ -493,7 +494,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "(int, float, list, symbol) realtime or rendering value",
 					"id" : "obj-58",
 					"index" : 1,
 					"maxclass" : "outlet",

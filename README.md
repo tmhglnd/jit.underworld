@@ -19,6 +19,7 @@ Gateway to non-realtime HiRes rendering of jitter visuals. The rendering process
 - `jit.underworld` : *the non-realtime rendering for jit.world*
 - `jit.hades~` : *capture signals per frame*
 - `jit.persephone` : *capture data (int/float/list/symbols) per frame*
+- `jit.charon` : *capture jitter matrices per frame*
 - `jit.acheron~` : *record audio on capture start to soundfile*
 
 ## jit.underworld
@@ -26,19 +27,19 @@ Gateway to non-realtime HiRes rendering of jitter visuals. The rendering process
 The main object that works together with the `jit.world` object to create a non-realtime rendering option.
 
 **arguments**
-- context name : the jit.world context name
-- name : name your jit.underworld context and use this for all your jitter objects in the patch.
+- context name : the jit.world context name (required)
+- name : name your jit.underworld context and use this for all your jitter objects in the patch. (required)
 
 **attributes**
-- `@fps` - the frames per second for data/signal capture and offline rendering
-- `@dim` - the rendering resolution x/y
-- `@render_dim` - the preview resolution in the jit.world
-- `@codec` - recording code (h264, prores, huffyuv, gif, jpeg)
-- `@engine` - recording engine (viddll, hap, avf, qt)
+- `@fps` - the frames per second for data/signal capture and offline rendering (default=60)
+- `@dim` - the rendering resolution x/y (default=480 270)
+- `@render_dim` - the preview resolution in the jit.world (default=1920 1080)
+- `@codec` - recording code (h264, prores, huffyuv, gif, jpeg, default=prores)
+- `@engine` - recording engine (viddll, hap, avf, qt, default=viddll)
 
 **messages**
 - `realtime` - use jitter in realtime, as usual
-- `capture` - start capturing the data/signal streams to dictionary per frame
+- `capture` - start capturing the data/signal/matrix streams to dictionary or matrixset per frame
 - `render` - offline render the captured data/signal/visual to disk
 - `goto` - view a specific frame
 - `rewind` - rewind framecount to 0 (stop/realtime also rewind)
@@ -75,6 +76,21 @@ The spouse of jit.hades~. Captures all "regular" data per rendering frame. This 
 **messages**
 - `int` `float` `list` `symbol` - capture incoming data or throughput in realtime mode
 - `messages` - set attributes via messages
+
+## jit.charon
+
+The ferryman of the underworld. Captures all jit.matrix input per rendering frame. All will be stored in a dynamic matrixset build in js for non-realtime rendering.
+
+**arguments**
+- context name : use the name of your jit.underworld context
+
+**attributes**
+- `@capture` - enable/disable the capturing for this object when you run the capture message on jit.underworld.
+
+**messages**
+- `jit_matrix` - capture incoming matrix or throughput in realtime mode
+- `messages` - set attributes via messages
+
 ## jit.acheron~
 
 jit.acheron~ is a multichannel recording abstraction that starts recording the received sound to a file on your disk in real time. It starts its recording at the moment you start to `capture` signals and parameters for the frame-timeline to allow for tight synchronisation after the rendering process is completed and you manually combine the video with the soundrecording.
@@ -90,6 +106,15 @@ jit.acheron~ is a multichannel recording abstraction that starts recording the r
 - `multichannelsignal` - input a mc-signal to record
 - `messages` - set attributes via messages
 
+## Merging sound and video with ffmpeg
+
+You can use any video editting software to add the video to the soundfile like iMovie, Davinci Resolve, Shotcut and more. But you can also use the commandline. If you have [`ffmpeg`](https://ffmpeg.org/download.html) installed use the following command:
+
+```
+$ ffmpeg -i movie.mov -i sound.wav -map 0:v -map 1:a -c:v copy -shortest output.mov
+```
+
+This line maps the movie of file 1 (`-map 0:v`) and the audio of file 2 (`-map 1:a`) into a new file (`output.mov`) where the total length is based on the shortest file (`-shortest`).
 # Install
 
 Download zip
